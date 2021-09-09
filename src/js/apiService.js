@@ -38,7 +38,14 @@ export default class ApiService {
     });
 
     return fetch(`${this.URL_BASE}?${queryParams}`).then(res => {
-      return res.json();
+      if (res.ok) {
+        return res.json();
+      }
+      throw new Error('Sorry! Something went wrong!');
     });
+  }
+
+  incPage() {
+    this.page += 1;
   }
 }
