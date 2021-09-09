@@ -13,6 +13,10 @@ const onSubmit = e => {
   e.preventDefault();
   const input = refs.form.elements.query.value;
   api.q = input;
+  if (!input) {
+    refs.listRef.innerHTML = '';
+    return refs.loadBtnRef.classList.add('is-hidden');
+  }
   api.resPage();
   refs.listRef.innerHTML = '';
 
