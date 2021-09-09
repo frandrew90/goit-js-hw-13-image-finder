@@ -48,4 +48,8 @@ export default class ApiService {
   incPage() {
     this.page += 1;
   }
+
+  resPage() {
+    this.page = 1;
+  }
 }

@@ -13,6 +13,9 @@ const onSubmit = e => {
   e.preventDefault();
   const input = refs.form.elements.query.value;
   api.q = input;
+  api.resPage();
+  refs.listRef.innerHTML = '';
+
   getImg();
 };
 

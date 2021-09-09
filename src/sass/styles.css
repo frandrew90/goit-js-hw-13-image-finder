@@ -10,15 +10,54 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .stats {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .stats-item {
   display: flex;
   align-items: center;
+}
+
+img {
+  object-fit: cover;
+}
+
+.photo-card {
+  border: solid 2px rgb(121, 120, 120);
+  border-radius: 0 0 10px 10px;
+}
+
+body {
+  text-align: center;
+  background-color: rgb(211, 210, 210);
+  padding: 20px 0;
+}
+
+.search-form {
+  margin-top: 20 px;
+}
+
+button {
+  height: 30px;
+  width: 200px;
+  border: solid 2px rgb(121, 120, 120);
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input {
+  height: 30px;
+  width: 400px;
+  border: solid 2px rgb(121, 120, 120);
+  border-radius: 5px;
+  margin-right: 20px;
 }
