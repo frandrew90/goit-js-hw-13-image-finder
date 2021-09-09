@@ -1,40 +1,26 @@
 // import './sass/main.scss';
-// import './sass/styles.css';
+import './sass/styles.css';
 import ApiService from './js/apiService';
 import refs from './js/refs';
 import makeMarkup from './templates/card.hbs';
 
 const api = new ApiService();
 
-console.log(api);
+// console.log(api);
 
 const onSubmit = e => {
   // `${URL_BASE}?image_type=photo&orientation=horizontal&q=${searchQuery}&page=${pageNum}&per_page=12&key=${API_KEY}`
   e.preventDefault();
   const input = refs.form.elements.query.value;
-  const URL_BASE = 'https://pixabay.com/api/';
-  //   const API_KEY = '23295311-073afe862d674061f7939d2e4';
-
-  const queryParams = new URLSearchParams({
-    image_type: 'photo',
-    orientation: 'horizontal',
-    q: input,
-    page: 1,
-    per_page: 12,
-    key: '23295311-073afe862d674061f7939d2e4',
+  api.q = input;
+  api.fetchPic().then(data => {
+    renderImg(data);
+    refs.loadBtnRef.classList.remove('is-hidden');
   });
-
-  //   console.log(`${URL_BASE}?${queryParams}`);
-
-  fetch(`${URL_BASE}?${queryParams}`)
-    .then(res => {
-      return res.json();
-    })
-    .then(renderImg);
 };
 
 const renderImg = ({ hits }) => {
-  console.log(hits);
+  //   console.log(hits);
   refs.listRef.innerHTML = makeMarkup(hits);
 };
 

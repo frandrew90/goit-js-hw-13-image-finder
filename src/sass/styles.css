@@ -1,0 +1,24 @@
+.is-hidden {
+  display: none;
+}
+
+.item {
+  display: flex;
+  margin: 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+}
